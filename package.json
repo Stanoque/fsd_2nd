@@ -1,0 +1,8 @@
+{
+  "name": "fsd_2nd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Stanoque/fsd_2nd.git",
+  "author": "Stanoque <stanoquedzhumpsh@gmail.com>",
+  "license": "MIT"
+}
