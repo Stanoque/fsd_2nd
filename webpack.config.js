@@ -13,15 +13,28 @@ const PATHS = {
 
 const common = merge ([
     { 
-        entry: './index.js',
+        entry: {
+            'landing': PATHS.source + '/pages/landing.pug',
+            'room': PATHS.source + '/pages/room.pug',
+            'search': PATHS.source + '/pages/search.pug'
+        },
         output: {
             path: PATHS.build,
             filename: '[name].js'
         },
         plugins: [
             new html_webpack({
-            template: './index.pug',
-        })
+                filename: 'landing.html',
+                template: PATHS.source + '/pages/landing.pug'
+            }),
+            new html_webpack({
+                filename: 'room.html',
+                template: PATHS.source + '/pages/room.pug'
+            }),
+            new html_webpack({
+                filename: 'search.html',
+                template: PATHS.source + '/pages/search.pug'
+            })
         ]
     },
    
