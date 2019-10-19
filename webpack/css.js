@@ -3,11 +3,10 @@ module.exports = function () {
         module: {
             rules: [
                 {
-                    test: /\.sass$/,
+                    test: /\.css$/,
                     use: [
                         'style-loader',
                         'css-loader',
-                        'sass-loader'
                     ]
                 }
             ]
