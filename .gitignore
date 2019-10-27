@@ -5,6 +5,7 @@
 
 # Node
 node_modules
+des_layout
 
 # Dist & test
 test
@@ -27,3 +28,4 @@ Desktop.ini
 .DS_Store*
 ehthumbs.db
 Icon?
+
