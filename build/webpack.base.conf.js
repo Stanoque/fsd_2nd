@@ -15,8 +15,9 @@ const PATHS = {
 
 // Pages const for HtmlWebpackPlugin
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
-const PAGES_DIR = PATHS.src
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.html'))
+//const PAGES_DIR = PATHS.src
+const PAGES_DIR = `${PATHS.src}/pug/pages`
+const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
 module.exports = {
   // BASE config
@@ -57,7 +58,12 @@ module.exports = {
           scss: 'vue-style-loader!css-loader!sass-loader'
         }
       }
-    }, {
+    },
+    {
+      test: /\.pug$/,
+      loader: 'pug-loader'
+    },
+    {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
@@ -121,8 +127,8 @@ module.exports = {
     // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
     // best way to create pages: https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
     ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page}`
+      template: `${PAGES_DIR}/${page}`, // .pug
+      filename: `./${page.replace(/\.pug/,'.html')}` // .html
     }))
   ],
 }
