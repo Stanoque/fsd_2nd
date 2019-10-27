@@ -83,7 +83,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             hash: false,
-            template: `${PATHS.src}/index.html`,
+            template: `${PATHS.src}/pages/index.html`,
             filename: './index.html'
         }),
         new CopyWebpackPlugin([
